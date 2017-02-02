@@ -3,16 +3,13 @@ language: go
 go_import_path: github.com/romainmenke/travis-env-test
 
 go:
-- 1.5.x
-- 1.6.x
-- 1.7.x
+- 1.5.4
+- 1.6.4
+- 1.7.4
 - master
 
 script:
 - go test .
-- export VERSIONS=$VERSIONS/$TRAVIS_GO_VERSION
-- export WEBHOOK_URL=https://httpmiddlewarevet.herokuapp.com/webhook/travis$VERSIONS
-- echo $WEBHOOK_URL
 
 notifications:
-  webhooks: $WEBHOOK_URL
+  webhooks: https://httpmiddlewarevet.herokuapp.com/webhook/travis
