@@ -17,4 +17,4 @@ script:
 - go test .
 
 notifications:
-  webhooks: $WEBHOOK_URL
+  webhooks: ${WEBHOOK_URL}
