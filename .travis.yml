@@ -11,5 +11,5 @@ go:
 script:
 - go test .
 
-notifications:
-  webhooks: https://httpmiddlewarevet.herokuapp.com/webhook/travis
+after_script:
+- "curl --data \"commit=$TRAVIS_COMMIT&version=$TRAVIS_GO_VERSION\" https://httpmiddlewarevet.herokuapp.com/webhook/travis"
