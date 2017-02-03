@@ -3,9 +3,9 @@ language: go
 go_import_path: github.com/romainmenke/travis-env-test
 
 go:
-- 1.5.4
-- 1.6.4
-- 1.7.4
+- 1.5.x
+- 1.6.x
+- 1.7.x
 - master
 
 script:
