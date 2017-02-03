@@ -1,6 +1,13 @@
 package main
 
-import "testing"
+import (
+	"runtime"
+	"testing"
+)
+
+func TestVersion(t *testing.T) {
+	t.Log(runtime.Version())
+}
 
 func TestDummy(t *testing.T) {
 	if dummy(37) != 42 {
