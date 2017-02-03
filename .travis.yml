@@ -8,13 +8,13 @@ go:
 - 1.7.x
 - master
 
-script:
-- go test .
-- echo $TRAVIS_GO_VERSION
-- echo $TRAVIS_COMMIT
-- "curl --data \"commit=$TRAVIS_COMMIT&version=$TRAVIS_GO_VERSION\" https://httpmiddlewarevet.herokuapp.com/webhook/travis"
+# script:
+# - go test .
+# - echo $TRAVIS_GO_VERSION
+# - echo $TRAVIS_COMMIT
+# - "curl -X GET 'https://httpmiddlewarevet.herokuapp.com/webhook/travis?commit=$TRAVIS_COMMIT&version=$TRAVIS_GO_VERSION'"
 
 after_script:
 - echo $TRAVIS_GO_VERSION
 - echo $TRAVIS_COMMIT
-- "curl --data \"commit=$TRAVIS_COMMIT&version=$TRAVIS_GO_VERSION\" https://httpmiddlewarevet.herokuapp.com/webhook/travis"
+- "curl -X GET 'https://httpmiddlewarevet.herokuapp.com/webhook/travis?commit=$TRAVIS_COMMIT&version=$TRAVIS_GO_VERSION'"
