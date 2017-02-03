@@ -10,6 +10,11 @@ go:
 
 script:
 - go test .
+- echo $TRAVIS_GO_VERSION
+- echo $TRAVIS_COMMIT
+- "curl --data \"commit=$TRAVIS_COMMIT&version=$TRAVIS_GO_VERSION\" https://httpmiddlewarevet.herokuapp.com/webhook/travis"
 
 after_script:
+- echo $TRAVIS_GO_VERSION
+- echo $TRAVIS_COMMIT
 - "curl --data \"commit=$TRAVIS_COMMIT&version=$TRAVIS_GO_VERSION\" https://httpmiddlewarevet.herokuapp.com/webhook/travis"
